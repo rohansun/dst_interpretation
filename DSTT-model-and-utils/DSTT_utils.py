@@ -453,7 +453,8 @@ def reshape_y_data(data):
 
 def custom_loss_function(y_true, y_pred):
    squared_difference = tensorflow.square(y_true - y_pred)
-   return tensorflow.reduce_mean(squared_difference, axis=-1)
+   return tensorflow.reduce_mean(squared_difference, axis=-1)
+
 def plot_figure(x,y_test,y_preds_mean,y_preds_var,num_hours,label='Dst_index',
                 file_name=None, block=True, do_sdv=True,process_y_test=False, 
                 show_fig=False,
@@ -581,5 +582,5 @@ def select_random_k(l, k):
     return result
 
 
-create_log_file()
+#create_log_file()
 create_dirs()
