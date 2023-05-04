@@ -582,5 +582,5 @@ def select_random_k(l, k):
     return result
 
 
-#create_log_file()
+create_log_file()
 create_dirs()
