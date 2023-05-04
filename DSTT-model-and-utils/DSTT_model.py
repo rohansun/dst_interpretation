@@ -64,7 +64,7 @@ class DSTTModel:
     def __init__(self,model_name='DSTTModel',early_stopping_patience=1):
         self.model_name = model_name
         callbacks = [EarlyStopping(monitor='loss', patience=early_stopping_patience)]
-        log('callbacks:', callbacks)
+        #log('callbacks:', callbacks)
 
     if tf.test.gpu_device_name() != '/device:GPU:0':
       print('WARNING: GPU device not found.')
@@ -279,7 +279,7 @@ class DSTTModel:
         weight_dir = 'models' + os.sep + str(num_hours) + interval_type[0]
         if w_dir is not None:
             weight_dir = w_dir +  os.sep + str(num_hours) + interval_type[0]
-        log('Loading weights from model dir:', weight_dir)
+        #log('Loading weights from model dir:', weight_dir)
         if not os.path.exists(weight_dir):
             print( 'Model weights directory does not exist:', weight_dir, 'trying the default_models directory')
             weight_dir = w_dir +  os.sep + str(num_hours) + interval_type[0]
