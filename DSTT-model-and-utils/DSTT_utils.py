@@ -356,13 +356,13 @@ def load_training_and_testing_data(num_hours,interval_type='hourly'):
 
     tr_file = data_dir + os.sep + 'solar-wind-data' + os.sep + num_hours + day_dir + os.sep +  train_file_name
     ts_file = data_dir + os.sep + 'solar-wind-data' + os.sep + num_hours + day_dir + os.sep + test_file_name
-    log('Loading required data from file:', tr_file)
-    if not os.path.exists(tr_file):
-        log('Required data file does not exist:', tr_file)
-        exit()
-    if not os.path.exists(ts_file):
-        log('Required data file does not exist:', tr_file)
-        exit()
+#     log('Loading required data from file:', tr_file)
+#     if not os.path.exists(tr_file):
+#         log('Required data file does not exist:', tr_file)
+#         exit()
+#     if not os.path.exists(ts_file):
+#         log('Required data file does not exist:', tr_file)
+#         exit()
                 
     all_data = pd.read_csv(tr_file)
     all_data = all_data.loc[all_data['YEAR'] != 2021].reset_index()
@@ -370,22 +370,22 @@ def load_training_and_testing_data(num_hours,interval_type='hourly'):
     if 'index' in all_data.columns:
         all_data = all_data.drop('index',axis=1) 
     
-    log('Loading required data from file:', ts_file)
+    #log('Loading required data from file:', ts_file)
     test_data_all = pd.read_csv(ts_file,dtype=None)
     
-    log('test_data_all[Timestamp][0]', test_data_all['Timestamp'][0],verbose=False)
-    log('test_data_all[Timestamp][last]', test_data_all['Timestamp'][len(test_data_all)-1])
+#     log('test_data_all[Timestamp][0]', test_data_all['Timestamp'][0],verbose=False)
+#     log('test_data_all[Timestamp][last]', test_data_all['Timestamp'][len(test_data_all)-1])
 
     test_filter=['2021-10-' + str(i) +'-' for i in range(1,32)]
     test_filter.extend(['2021-11-' + str(i) +'-' for i in range(1,31)])
     test_data = test_data_all.loc[test_data_all['Timestamp'].str.contains('|'.join(test_filter))].reset_index()
-    log('test_data.max:', np.array(test_data[dst_col].values).max())
-    log('test_data.min:', np.array(test_data[dst_col].values).min())
-    log('1 test_data[Timestamp][0]', test_data['Timestamp'][0])
-    log('1 test_data[Timestamp][last]', test_data['Timestamp'][len(test_data)-1])
+#     log('test_data.max:', np.array(test_data[dst_col].values).max())
+#     log('test_data.min:', np.array(test_data[dst_col].values).min())
+#     log('1 test_data[Timestamp][0]', test_data['Timestamp'][0])
+#     log('1 test_data[Timestamp][last]', test_data['Timestamp'][len(test_data)-1])
     
     orig_y_test = test_data[dst_col].values
-    log('all_data.columns:', all_data.columns, verbose=False)
+    #log('all_data.columns:', all_data.columns, verbose=False)
     data_2021 = test_data_all.loc[~test_data_all['Timestamp'].isin(test_filter)]
     all_data = pd.concat([all_data,data_2021] )
     all_data.sort_values(by=['Timestamp'])
@@ -582,5 +582,5 @@ def select_random_k(l, k):
     return result
 
 
-create_log_file()
-create_dirs()
+#create_log_file()
+#create_dirs()
