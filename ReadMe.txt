@@ -27,6 +27,10 @@ pip install -r requirements.txt
 
 git clone https://github.com/blent-ai/ALEPython && cd ALEPython && pip install -r requirements.txt && python setup.py install
 
+If the above command doesn't work, then try the below command.
+
+pip install git+https://github.com/MaximeJumelle/ALEPython.git@dev#egg=alepython
+
 ->This package was tested on alepython version 0.1.dev17+g286350a
 
 Note: If you run into an error while running the program, make sure the version of Python and the libraries you are using are the same as above.
