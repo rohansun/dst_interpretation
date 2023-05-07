@@ -1,5 +1,8 @@
 ->This ReadMe explains the requirements and getting started to run the Interpretable Deep Learning for Dst Prediction.
 
+->This notebook is Binder enabled and can be run on mybinder.org by using the link below.
+https://mybinder.org/v2/gh/rohansun/dst_interpretation/HEAD
+
 ->Tested on Windows 11 and Python 3.9.16
 
 The following python packages and modules are required to run Interpretable Deep Learning for Dst Prediction:
