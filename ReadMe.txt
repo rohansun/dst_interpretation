@@ -40,16 +40,18 @@ Package Structure:
 After downloading the zip file, the package includes the following folders and files
 
 1) ReadMe.txt - this ReadMe file.
-2) environment.yml - includes the packages and modules required and their versions.
-3) data - Data sets to train and interpret models that forecast Dst index 1-6 hrs ahead.
-4) models - Directory in which the weights of six trained models are saved.
-5) DSTT-model-and-utils - folder that contains the following four Python files.
+2)ReadMeLinux.txt - ReadMe file to run on Linux.
+3)ReadMeColab.txt - ReadMe file to run on Colab.
+4) environment.yml - includes the packages and modules required and their versions.
+5) data - Data sets to train and interpret models that forecast Dst index 1-6 hrs ahead.
+6) models - Directory in which the weights of six trained models are saved.
+7) DSTT-model-and-utils - folder that contains the following four Python files.
 	DSTT_model.py - Used for Loading the trained models and Predicting on data inorder to interpret.
 	DSTT_utils.py - Used for retrieving the data present in the 'data' folder.
 	Attention.py - implements Attention layer of DSTT.
 	DSTT_dropout.py - implements Custom Monte Carlo Dropout for DSTT.
-6) ale-khr.ipynb - Jupyter notebook files for global interpretation of the models. They implement ALE on models that forecast Dst index k = 1-6 hrs ahead.
-7) lime-khr.ipynb - Jupyter notebook files for local interpretation of the models. They implement LIME on models that forecast Dst index k = 1-6 hrs ahead.  
+8) ale-khr.ipynb - Jupyter notebook files for global interpretation of the models. They implement ALE on models that forecast Dst index k = 1-6 hrs ahead.
+9) lime-khr.ipynb - Jupyter notebook files for local interpretation of the models. They implement LIME on models that forecast Dst index k = 1-6 hrs ahead.  
 
 Note: DSTT refers to the Dst Transformer referred here https://github.com/ccsc-tools/Dst-prediction 
 
