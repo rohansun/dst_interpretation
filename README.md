@@ -1,4 +1,21 @@
 # dst_interpretation
+The disturbance storm time (Dst) index is a widely used metric in space weather research to measure the intensity of geomagnetic storms caused by solar activity. This project analyzed six time series models that forecast the Dst-index 1-6 hours ahead using ALE and LIME techniques to better understand the features driving the Dst index prediction.
+
+ALE analysis showed that all six models forecast a
+lower Dst index as the value of the solar wind parameter interplanetary
+magnetic field (IMF) increased and a higher Dst index as the magnetic
+field Bz component parameter value increased. Moreover, the models
+predict a higher Dst index if the values of these two parameters are both
+small or large. The same is true for the parameter pairs IMF and proton
+density.
+
+According to LIME, the parameter plasma temperature had the
+most effect on the prediction of the first observation of the test set for
+models that forecast 1 hour, 2 hours, 5 hours, and 6 hours ahead. And for
+models that forecast 3 and 4 hours ahead, the parameter plasma speed
+had the most effect on the prediction.
+
+## Binder
 This notebook is Binder enabled and can be run on mybinder.org by using the link below.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rohansun/dst_interpretation/HEAD)
